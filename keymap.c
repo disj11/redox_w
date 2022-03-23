@@ -122,6 +122,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             set_led_off;
             break;
         case _SYMB:
+        case _KEYPAD:
             set_led_green;
             break;
         case _IDEA_W:
