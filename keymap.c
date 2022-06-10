@@ -5,8 +5,6 @@
 #define _KEYPAD 2
 #define _ADJUST 3
 
-#define MY_COPY     LCTL(KC_INS)
-#define MY_PASTE    LCTL(KC_INS)
 #define OSM_LSFT    OSM(MOD_LSFT)
 #define OSM_RSFT    OSM(MOD_RSFT)
 #define OSM_LCS     MOD_LCTL|MOD_LSFT
@@ -16,6 +14,8 @@
 #define LCTL_TAB    LCTL_T(KC_TAB)
 #define LCTL_ESC    LCTL_T(KC_ESC)
 #define LALT_LANG   LALT_T(KC_LANG1)
+#define P_BTN_1     PROGRAMMABLE_BUTTON_1
+#define P_BTN_2     PROGRAMMABLE_BUTTON_2
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT(
@@ -26,9 +26,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                                 ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
      LCTL_ESC     , KC_A       , KC_S       , KC_D       , KC_F       , KC_G       , KC_HOME   ,                                  KC_END     , KC_H       , KC_J       , KC_K       , KC_L       , KC_SCLN    , KC_QUOT    ,
   //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┐       ┌────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-     OSM_LSFT    , KC_Z       , KC_X       , KC_C       , KC_V       , KC_B       , KC_PGUP     ,KC_PGDN    ,        MY_COPY     , MY_PASTE   , KC_N       , KC_M       , KC_COMM    , KC_DOT     , KC_SLSH    , OSM_RSFT   ,
+     OSM_LSFT    , KC_Z       , KC_X       , KC_C       , KC_V       , KC_B       , KC_PGUP     ,KC_PGDN    ,        P_BTN_1     , P_BTN_2    , KC_N       , KC_M       , KC_COMM    , KC_DOT     , KC_SLSH    , OSM_RSFT   ,
   //├────────────┼────────────┼────────────┼────────────┼──────┬─────┴─────┬──────┼────────────┼────────────┤       ├────────────┼────────────┼──────┬─────┴─────┬──────┼────────────┼────────────┼────────────┼────────────┤
-     OSM_LCS     , OSM_LCA    , KC_LGUI    , LALT_LANG         , KEYPAD_SPC       , LCTL_TAB   , KC_DEL     ,        KC_BSPC    , KC_ENT      ,       SYMB_SPC   ,       KC_LEFT     , KC_DOWN    , KC_UP      , KC_RGHT
+     OSM_LCS     , OSM_LCA    , KC_LGUI    , LALT_LANG         , KEYPAD_SPC       , LCTL_TAB   , KC_DEL     ,        KC_BSPC     , KC_ENT     ,       SYMB_SPC   ,       KC_LEFT     , KC_DOWN    , KC_UP      , KC_RGHT
   //└────────────┴────────────┴────────────┴────────────┘      └───────────┘      └────────────┴────────────┘       └────────────┴────────────┘      └───────────┘      └────────────┴────────────┴────────────┴────────────┘
   ),
 
@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //┌────────────┬────────────┬────────────┬────────────┬────────────┬────────────┐                                                           ┌────────────┬────────────┬────────────┬────────────┬────────────┬────────────┐
      KC_TILD     , KC_F1      , KC_F2      , KC_F3      , KC_F4      , KC_F5      ,                                                            KC_F6       , KC_F7      , KC_F8      , KC_F9      , KC_F10     ,  KC_GRV    ,
   //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┐                                 ┌────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-     _______     , KC_EXLM    , KC_AT      , KC_LCBR    , KC_RCBR    , KC_PIPE    , KC_F11     ,                                  KC_F12      , _______    , KC_WH_U    , KC_UP      , _______    , _______    , _______    ,
+     _______     , KC_PPLS    , KC_PAST    , KC_LCBR    , KC_RCBR    , KC_PIPE    , KC_F11     ,                                  KC_F12      , _______    , KC_WH_U    , KC_UP      , _______    , _______    , _______    ,
   //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                                 ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
      KC_CAPS     , KC_HASH    , KC_DLR     , KC_LPRN    , KC_RPRN    , KC_AMPR    , _______    ,                                  _______     , KC_WH_L    , KC_LEFT    , KC_DOWN    , KC_RGHT    , KC_WH_R    , _______    ,
   //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┐       ┌────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_ADJUST] = LAYOUT(
     //┌────────────┬────────────┬────────────┬────────────┬────────────┬────────────┐                                                           ┌────────────┬────────────┬────────────┬────────────┬────────────┬────────────┐
-       RESET       , LCG_NRM    , LCG_SWP    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,                                                            XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,
+       RESET       , CG_NORM    , CG_SWAP    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,                                                            XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,
     //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┐                                 ┌────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
        XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,                                  XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,
     //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                                 ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
