@@ -1,32 +1,57 @@
 #include QMK_KEYBOARD_H
 
-#define _QWERTY 0
-#define _SYMB   1
-#define _KEYPAD 2
-#define _ADJUST 3
+#define _WIN    0
+#define _MAC    1
+#define _SYMB   2
+#define _KEYPAD 3
+#define _ADJUST 4
 
-#define OSM_LSFT    OSM(MOD_LSFT)
-#define OSM_RSFT    OSM(MOD_RSFT)
-#define OSM_LCS     MOD_LCTL|MOD_LSFT
-#define OSM_LCA     MOD_LCTL|MOD_LALT
 #define KEYPAD_SPC  LT(_KEYPAD, KC_SPC)
 #define SYMB_SPC    LT(_SYMB,KC_SPC)
-#define LCTL_TAB    LCTL_T(KC_TAB)
-#define LCTL_ESC    LCTL_T(KC_ESC)
-#define LALT_LANG   LALT_T(KC_LANG1)
+#define OSM_LSFT    OSM(MOD_LSFT)
+#define OSM_RSFT    OSM(MOD_RSFT)
+
+// _WIN
+#define W_OSM_LCS     MOD_LCTL|MOD_LSFT
+#define W_OSM_LCA     MOD_LCTL|MOD_LALT
+#define W_LCTL_TAB    LCTL_T(KC_TAB)
+#define W_LCTL_ESC    LCTL_T(KC_ESC)
+#define W_LALT_LANG   LALT_T(KC_LANG1)
+
+// _MAC
+#define M_OSM_LCS     MOD_LGUI|MOD_LSFT
+#define M_OSM_LCMO    MOD_LGUI|MOD_LALT
+#define M_OSM_LCTO    MOD_LCTL|MOD_LALT
+#define M_LCMD_TAB    LCMD_T(KC_TAB)
+#define M_LCMD_ESC    LCMD_T(KC_ESC)
+#define M_LOPT_LANG   LOPT_T(KC_LANG1)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_QWERTY] = LAYOUT(
+  [_WIN] = LAYOUT(
+  //┌────────────┬────────────┬────────────┬────────────┬────────────┬────────────┐                                                           ┌────────────┬────────────┬────────────┬────────────┬────────────┬────────────┐
+     KC_GRV      , KC_1       , KC_2       , KC_3       , KC_4       , KC_5       ,                                                             KC_7       , KC_8       , KC_9       , KC_0       , KC_MINS    , KC_EQL     ,
+  //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┐                                 ┌────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
+     KC_TAB      , KC_Q       , KC_W       , KC_E       , KC_R       , KC_T       , KC_6       ,                                  TO(_ADJUST) , KC_Y       , KC_U       , KC_I       , KC_O       , KC_P       , KC_BSLS    ,
+  //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                                 ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
+     W_LCTL_ESC  , KC_A       , KC_S       , KC_D       , KC_F       , KC_G       , KC_HOME    ,                                  KC_END      , KC_H       , KC_J       , KC_K       , KC_L       , KC_SCLN    , KC_QUOT    ,
+  //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┐       ┌────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
+     OSM_LSFT    , KC_Z       , KC_X       , KC_C       , KC_V       , KC_B       , KC_PGUP    , KC_PGDN    ,        PB_10       , PB_11      , KC_N       , KC_M       , KC_COMM    , KC_DOT     , KC_SLSH    , OSM_RSFT   ,
+  //├────────────┼────────────┼────────────┼────────────┼──────┬─────┴─────┬──────┼────────────┼────────────┤       ├────────────┼────────────┼──────┬─────┴─────┬──────┼────────────┼────────────┼────────────┼────────────┤
+     W_OSM_LCS   , W_OSM_LCA  , KC_LGUI    , W_LALT_LANG       , KEYPAD_SPC       , W_LCTL_TAB , KC_DEL     ,        KC_BSPC     , KC_ENT     ,       SYMB_SPC   ,       KC_LEFT     , KC_DOWN    , KC_UP      , KC_RGHT
+  //└────────────┴────────────┴────────────┴────────────┘      └───────────┘      └────────────┴────────────┘       └────────────┴────────────┘      └───────────┘      └────────────┴────────────┴────────────┴────────────┘
+  ),
+
+  [_MAC] = LAYOUT(
   //┌────────────┬────────────┬────────────┬────────────┬────────────┬────────────┐                                                           ┌────────────┬────────────┬────────────┬────────────┬────────────┬────────────┐
      KC_GRV      , KC_1       , KC_2       , KC_3       , KC_4       , KC_5       ,                                                             KC_7       , KC_8       , KC_9       , KC_0       , KC_MINS    , KC_EQL     ,
   //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┐                                 ┌────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
      KC_TAB      , KC_Q       , KC_W       , KC_E       , KC_R       , KC_T       , KC_6       ,                                  MO(_ADJUST) , KC_Y       , KC_U       , KC_I       , KC_O       , KC_P       , KC_BSLS    ,
   //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                                 ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-     LCTL_ESC     , KC_A       , KC_S       , KC_D       , KC_F       , KC_G       , KC_HOME   ,                                  KC_END     , KC_H       , KC_J       , KC_K       , KC_L       , KC_SCLN    , KC_QUOT    ,
+     W_LCTL_ESC  , KC_A       , KC_S       , KC_D       , KC_F       , KC_G       , KC_HOME    ,                                  KC_END      , KC_H       , KC_J       , KC_K       , KC_L       , KC_SCLN    , KC_QUOT    ,
   //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┐       ┌────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-     OSM_LSFT    , KC_Z       , KC_X       , KC_C       , KC_V       , KC_B       , KC_PGUP     ,KC_PGDN    ,        PB_10       , PB_11      , KC_N       , KC_M       , KC_COMM    , KC_DOT     , KC_SLSH    , OSM_RSFT   ,
+     OSM_LSFT    , KC_Z       , KC_X       , KC_C       , KC_V       , KC_B       , KC_PGUP    , KC_PGDN    ,        PB_10       , PB_11      , KC_N       , KC_M       , KC_COMM    , KC_DOT     , KC_SLSH    , OSM_RSFT   ,
   //├────────────┼────────────┼────────────┼────────────┼──────┬─────┴─────┬──────┼────────────┼────────────┤       ├────────────┼────────────┼──────┬─────┴─────┬──────┼────────────┼────────────┼────────────┼────────────┤
-     OSM_LCS     , OSM_LCA    , KC_LGUI    , LALT_LANG         , KEYPAD_SPC       , LCTL_TAB   , KC_DEL     ,        KC_BSPC     , KC_ENT     ,       SYMB_SPC   ,       KC_LEFT     , KC_DOWN    , KC_UP      , KC_RGHT
+     M_OSM_LCS   , M_OSM_LCMO , M_OSM_LCTO , M_LOPT_LANG       , KEYPAD_SPC       , M_LCMD_TAB , KC_DEL     ,        KC_BSPC     , KC_ENT     ,       SYMB_SPC   ,       KC_LEFT     , KC_DOWN    , KC_UP      , KC_RGHT
   //└────────────┴────────────┴────────────┴────────────┘      └───────────┘      └────────────┴────────────┘       └────────────┴────────────┘      └───────────┘      └────────────┴────────────┴────────────┴────────────┘
   ),
 
@@ -60,11 +85,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_ADJUST] = LAYOUT(
     //┌────────────┬────────────┬────────────┬────────────┬────────────┬────────────┐                                                           ┌────────────┬────────────┬────────────┬────────────┬────────────┬────────────┐
-       RESET       , CG_NORM    , CG_SWAP    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,                                                            XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,
+       RESET       , TO(_WIN)   , TO(_MAC)   , XXXXXXX    , XXXXXXX    , XXXXXXX    ,                                                            XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,
     //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┐                                 ┌────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-       XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,                                  XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,
+       XXXXXXX     , KC_ASUP    , KC_ASDN    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,                                  XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,
     //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                                 ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-       XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,                                  XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,
+       XXXXXXX     , KC_ASON    , KC_ASOFF   , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,                                  XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,
     //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┐       ┌────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
        XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,        XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,
     //├────────────┼────────────┼────────────┼────────────┼──────┬─────┴─────┬──────┼────────────┼────────────┤       ├────────────┼────────────┼──────┬─────┴─────┬──────┼────────────┼────────────┼────────────┼────────────┤
@@ -75,34 +100,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     switch (get_highest_layer(state)) {
-        case _SYMB:
-            set_led_green;
-        case _KEYPAD:
+        case _MAC:
             set_led_green;
             break;
         case _ADJUST:
-            set_led_green;
+            set_led_red;
             break;
         default:
             set_led_off;
-            break;
     }
     return state;
-}
-
-LEADER_EXTERNS();
-
-void matrix_scan_user(void) {
-    LEADER_DICTIONARY() {
-        leading = false;
-
-        SEQ_TWO_KEYS(KC_R, KC_N) {
-            register_code(KC_LSFT);
-            register_code(KC_F6);
-            unregister_code(KC_F6);
-            unregister_code(KC_LSFT);
-        }
-
-        leader_end();
-    }
 }

@@ -1,2 +1,3 @@
-#define LEADER_PER_KEY_TIMING
-#define LEADER_TIMEOUT 500
+#pragma once
+
+#define AUTO_SHIFT_TIMEOUT 200
