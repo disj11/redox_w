@@ -14,8 +14,6 @@
 #define LCTL_TAB    LCTL_T(KC_TAB)
 #define LCTL_ESC    LCTL_T(KC_ESC)
 #define LALT_LANG   LALT_T(KC_LANG1)
-#define P_BTN_1     PROGRAMMABLE_BUTTON_1
-#define P_BTN_2     PROGRAMMABLE_BUTTON_2
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT(
@@ -26,7 +24,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                                 ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
      LCTL_ESC     , KC_A       , KC_S       , KC_D       , KC_F       , KC_G       , KC_HOME   ,                                  KC_END     , KC_H       , KC_J       , KC_K       , KC_L       , KC_SCLN    , KC_QUOT    ,
   //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┐       ┌────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-     OSM_LSFT    , KC_Z       , KC_X       , KC_C       , KC_V       , KC_B       , KC_PGUP     ,KC_PGDN    ,        P_BTN_1     , P_BTN_2    , KC_N       , KC_M       , KC_COMM    , KC_DOT     , KC_SLSH    , OSM_RSFT   ,
+     OSM_LSFT    , KC_Z       , KC_X       , KC_C       , KC_V       , KC_B       , KC_PGUP     ,KC_PGDN    ,        PB_10       , PB_11      , KC_N       , KC_M       , KC_COMM    , KC_DOT     , KC_SLSH    , OSM_RSFT   ,
   //├────────────┼────────────┼────────────┼────────────┼──────┬─────┴─────┬──────┼────────────┼────────────┤       ├────────────┼────────────┼──────┬─────┴─────┬──────┼────────────┼────────────┼────────────┼────────────┤
      OSM_LCS     , OSM_LCA    , KC_LGUI    , LALT_LANG         , KEYPAD_SPC       , LCTL_TAB   , KC_DEL     ,        KC_BSPC     , KC_ENT     ,       SYMB_SPC   ,       KC_LEFT     , KC_DOWN    , KC_UP      , KC_RGHT
   //└────────────┴────────────┴────────────┴────────────┘      └───────────┘      └────────────┴────────────┘       └────────────┴────────────┘      └───────────┘      └────────────┴────────────┴────────────┴────────────┘
