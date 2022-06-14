@@ -57,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_SYMB] = LAYOUT(
   //┌────────────┬────────────┬────────────┬────────────┬────────────┬────────────┐                                                           ┌────────────┬────────────┬────────────┬────────────┬────────────┬────────────┐
-     KC_TILD     , KC_F1      , KC_F2      , KC_F3      , KC_F4      , KC_F5      ,                                                            KC_F6       , KC_F7      , KC_F8      , KC_F9      , KC_F10     ,  KC_GRV    ,
+     KC_F11      , KC_F1      , KC_F2      , KC_F3      , KC_F4      , KC_F5      ,                                                            KC_F6       , KC_F7      , KC_F8      , KC_F9      , KC_F10     ,  KC_F12    ,
   //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┐                                 ┌────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
      _______     , KC_PPLS    , KC_PAST    , KC_LCBR    , KC_RCBR    , KC_PIPE    , KC_F11     ,                                  KC_F12      , _______    , KC_WH_U    , KC_UP      , _______    , _______    , _______    ,
   //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                                 ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
@@ -71,11 +71,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_KEYPAD] = LAYOUT(
   //┌────────────┬────────────┬────────────┬────────────┬────────────┬────────────┐                                                           ┌────────────┬────────────┬────────────┬────────────┬────────────┬────────────┐
-     _______     , KC_F1      , KC_F2      , KC_F3      , KC_F4      , KC_F5      ,                                                            KC_F6       , KC_F7      , KC_F8      , KC_F9      , KC_F10     , _______    ,
+     KC_F11      , KC_F1      , KC_F2      , KC_F3      , KC_F4      , KC_F5      ,                                                            KC_F6       , KC_F7      , KC_F8      , KC_F9      , KC_F10     , KC_F12    ,
   //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┐                                 ┌────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-     _______     , _______    , _______    , KC_UP      , KC_WH_U    , _______    , KC_F11     ,                                  KC_F12      , KC_PPLS    , KC_KP_7    , KC_KP_8    , KC_KP_9    , KC_MINS    , KC_PEQL    ,
+     _______     , _______    , _______    , KC_MS_U    , KC_WH_U    , _______    , KC_F11     ,                                  KC_F12      , KC_PPLS    , KC_KP_7    , KC_KP_8    , KC_KP_9    , KC_PMNS    , KC_PEQL    ,
   //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                                 ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-     _______     , KC_WH_L    , KC_LEFT    , KC_DOWN    , KC_RGHT    , KC_WH_R    , _______    ,                                  _______     , KC_PAST    , KC_KP_4    , KC_KP_5    , KC_KP_6    , KC_PMNS    , KC_PEQL    ,
+     _______     , KC_WH_L    , KC_MS_L    , KC_MS_D    , KC_MS_R    , KC_WH_R    , _______    ,                                  _______     , KC_PAST    , KC_KP_4    , KC_KP_5    , KC_KP_6    , KC_PSLS    , KC_PEQL    ,
   //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┐       ┌────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
      _______     , _______    , _______    , _______    , KC_WH_D    , _______    , _______    , _______    ,        _______     , _______    , KC_KP_0    , KC_KP_1    , KC_KP_2    , KC_KP_3    , _______    , _______    ,
   //├────────────┼────────────┼────────────┼────────────┼──────┬─────┴─────┬──────┼────────────┼────────────┤       ├────────────┼────────────┼──────┬─────┴─────┬──────┼────────────┼────────────┼────────────┼────────────┤
@@ -87,11 +87,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //┌────────────┬────────────┬────────────┬────────────┬────────────┬────────────┐                                                           ┌────────────┬────────────┬────────────┬────────────┬────────────┬────────────┐
        RESET       , TO(_WIN)   , TO(_MAC)   , XXXXXXX    , XXXXXXX    , XXXXXXX    ,                                                            XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,
     //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┐                                 ┌────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-       XXXXXXX     , KC_ASUP    , KC_ASDN    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,                                  XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,
+       XXXXXXX     , KC_ASUP    , KC_ACL2    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,                                  XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,
     //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                                 ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-       XXXXXXX     , KC_ASON    , KC_ASOFF   , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,                                  XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,
+       XXXXXXX     , KC_ASTG    , KC_ACL1    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,                                  XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,
     //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┐       ┌────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-       XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,        XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,
+       XXXXXXX     , KC_ASDN    , KC_ACL0    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,        XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    ,
     //├────────────┼────────────┼────────────┼────────────┼──────┬─────┴─────┬──────┼────────────┼────────────┤       ├────────────┼────────────┼──────┬─────┴─────┬──────┼────────────┼────────────┼────────────┼────────────┤
        XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX    ,       XXXXXXX    ,       XXXXXXX     , XXXXXXX    ,        XXXXXXX     , XXXXXXX    ,       XXXXXXX    ,       XXXXXXX     , XXXXXXX    , XXXXXXX    , XXXXXXX
     //└────────────┴────────────┴────────────┴────────────┘      └───────────┘      └────────────┴────────────┘       └────────────┴────────────┘      └───────────┘      └────────────┴────────────┴────────────┴────────────┘
@@ -99,6 +99,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 layer_state_t layer_state_set_user(layer_state_t state) {
+//    set_led_off
+//    set_led_white
+//    set_led_blue
+//    set_led_red
+//    set_led_magenta
     switch (get_highest_layer(state)) {
         case _MAC:
             set_led_green;
