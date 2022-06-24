@@ -1,6 +1,6 @@
 #pragma once
 
-#define AUTO_SHIFT_TIMEOUT 150
+#define COMBO_COUNT 1
 
 #define MK_3_SPEED
 

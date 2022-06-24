@@ -116,3 +116,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     }
     return state;
 }
+
+const uint16_t PROGMEM esc_combo[] = {KC_J, KC_K, COMBO_END};
+combo_t key_combos[COMBO_COUNT] = {
+    COMBO(esc_combo, KC_ESC),
+};
