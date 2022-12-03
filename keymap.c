@@ -10,21 +10,7 @@
 #define SYMB_SPC    LT(_SYMB,KC_SPC)
 #define OSM_LSFT    OSM(MOD_LSFT)
 #define OSM_RSFT    OSM(MOD_RSFT)
-
-// _WIN
-#define W_OSM_LCS     OSM(MOD_LCTL|MOD_LSFT)
-#define W_OSM_LCA     OSM(MOD_LCTL|MOD_LALT)
-#define W_LCTL_TAB    LCTL_T(KC_TAB)
-#define W_LCTL_ESC    LCTL_T(KC_ESC)
-#define W_LALT_LANG   LALT_T(KC_LANG1)
-
-// _MAC
-#define M_OSM_LCS     OSM(MOD_LGUI|MOD_LSFT)
-#define M_OSM_LCMO    OSM(MOD_LGUI|MOD_LALT)
-#define M_OSM_LCTO    OSM(MOD_LCTL|MOD_LALT)
-#define M_LCMD_TAB    LCMD_T(KC_TAB)
-#define M_LCMD_ESC    LCMD_T(KC_ESC)
-#define M_LOPT_LANG   LOPT_T(KC_LANG1)
+#define LCTL_ESC    LCTL_T(KC_ESC)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_WIN] = LAYOUT(
@@ -33,11 +19,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┐                                 ┌────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
      KC_TAB      , KC_Q       , KC_W       , KC_E       , KC_R       , KC_T       , KC_6       ,                                  MO(_ADJUST) , KC_Y       , KC_U       , KC_I       , KC_O       , KC_P       , KC_BSLS    ,
   //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                                 ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-     W_LCTL_ESC  , KC_A       , KC_S       , KC_D       , KC_F       , KC_G       , KC_HOME    ,                                  KC_END      , KC_H       , KC_J       , KC_K       , KC_L       , KC_SCLN    , KC_QUOT    ,
+     LCTL_ESC    , KC_A       , KC_S       , KC_D       , KC_F       , KC_G       , KC_HOME    ,                                  KC_END      , KC_H       , KC_J       , KC_K       , KC_L       , KC_SCLN    , KC_QUOT    ,
   //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┐       ┌────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
      OSM_LSFT    , KC_Z       , KC_X       , KC_C       , KC_V       , KC_B       , KC_PGDN    , KC_PGUP    ,        PB_10       , PB_11      , KC_N       , KC_M       , KC_COMM    , KC_DOT     , KC_SLSH    , OSM_RSFT   ,
   //├────────────┼────────────┼────────────┼────────────┼──────┬─────┴─────┬──────┼────────────┼────────────┤       ├────────────┼────────────┼──────┬─────┴─────┬──────┼────────────┼────────────┼────────────┼────────────┤
-     W_OSM_LCS   , W_OSM_LCA  , KC_LGUI    , W_LALT_LANG       , KEYPAD_SPC       , W_LCTL_TAB , KC_DEL     ,        KC_BSPC     , KC_ENT     ,       SYMB_SPC   ,       KC_LEFT     , KC_DOWN    , KC_UP      , KC_RGHT
+     KC_LCTL     , KC_LGUI    , KC_LALT    , KC_RALT           , KEYPAD_SPC       , KC_LCTL     , KC_DEL     ,        KC_BSPC     , KC_ENT     ,       SYMB_SPC   ,       KC_LEFT     , KC_DOWN    , KC_UP      , KC_RGHT
   //└────────────┴────────────┴────────────┴────────────┘      └───────────┘      └────────────┴────────────┘       └────────────┴────────────┘      └───────────┘      └────────────┴────────────┴────────────┴────────────┘
   ),
 
@@ -47,11 +33,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┐                                 ┌────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
      KC_TAB      , KC_Q       , KC_W       , KC_E       , KC_R       , KC_T       , KC_6       ,                                  MO(_ADJUST) , KC_Y       , KC_U       , KC_I       , KC_O       , KC_P       , KC_BSLS    ,
   //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤                                 ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
-     W_LCTL_ESC  , KC_A       , KC_S       , KC_D       , KC_F       , KC_G       , KC_HOME    ,                                  KC_END      , KC_H       , KC_J       , KC_K       , KC_L       , KC_SCLN    , KC_QUOT    ,
+     LCTL_ESC    , KC_A       , KC_S       , KC_D       , KC_F       , KC_G       , KC_HOME    ,                                  KC_END      , KC_H       , KC_J       , KC_K       , KC_L       , KC_SCLN    , KC_QUOT    ,
   //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┐       ┌────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
      OSM_LSFT    , KC_Z       , KC_X       , KC_C       , KC_V       , KC_B       , KC_PGDN    , KC_PGUP    ,        PB_10       , PB_11      , KC_N       , KC_M       , KC_COMM    , KC_DOT     , KC_SLSH    , OSM_RSFT   ,
   //├────────────┼────────────┼────────────┼────────────┼──────┬─────┴─────┬──────┼────────────┼────────────┤       ├────────────┼────────────┼──────┬─────┴─────┬──────┼────────────┼────────────┼────────────┼────────────┤
-     M_OSM_LCS   , M_OSM_LCMO , M_OSM_LCTO , M_LOPT_LANG       , KEYPAD_SPC       , M_LCMD_TAB , KC_DEL     ,        KC_BSPC     , KC_ENT     ,       SYMB_SPC   ,       KC_LEFT     , KC_DOWN    , KC_UP      , KC_RGHT
+     KC_LCTL     , KC_LOPT    , KC_LCMD    , KC_RALT           , KEYPAD_SPC       , KC_LCMD    , KC_DEL     ,        KC_BSPC     , KC_ENT     ,       SYMB_SPC   ,       KC_LEFT     , KC_DOWN    , KC_UP      , KC_RGHT
   //└────────────┴────────────┴────────────┴────────────┘      └───────────┘      └────────────┴────────────┘       └────────────┴────────────┘      └───────────┘      └────────────┴────────────┴────────────┴────────────┘
   ),
 
