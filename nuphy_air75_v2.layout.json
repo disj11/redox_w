@@ -1,6 +1,6 @@
 {
   "name": "NuPhy Air75 V2",
-  "vendorProductId": 435499589,
+  "vendorProductId": 435499590,
   "macros": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
   "layers": [
     [
@@ -111,10 +111,10 @@
       "LAG(KC_EJCT)",
       "KC_BRID",
       "KC_BRIU",
-      "0xc1",
-      "G(KC_SPC)",
       "CUSTOM(6)",
       "CUSTOM(7)",
+      "CUSTOM(8)",
+      "CUSTOM(21)",
       "KC_MPRV",
       "KC_MPLY",
       "KC_MNXT",
